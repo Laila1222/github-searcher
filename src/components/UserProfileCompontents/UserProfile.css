@@ -1,0 +1,29 @@
+/* UserProfile */
+
+.custom-container {
+  padding: 1rem;
+}
+
+#main-side-container
+
+/* Sidebar */
+#sidebar-avatar {
+  width: 100%;
+}
+
+/* Main side */
+
+#menu-container {
+  width: 100%;
+}
+
+/* Menu item */
+
+.remove-def-style {
+  border: none;
+  background-color: white;
+}
+
+.menuItem:hover {
+  background-color: rgb(216, 213, 213);
+}

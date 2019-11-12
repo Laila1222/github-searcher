@@ -1,0 +1,42 @@
+#search-bar {
+  height: 80vh;
+  position: relative;
+  background-image: url('../pictures/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.to-center {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* UserSearch */
+#main-search-form {
+  padding: 2rem;
+}
+
+/* Error text */
+#no-result-img {
+  width: 3rem;
+  /* margin: 1rem; */
+}
+
+.no-result-div {
+  border: 1px solid rgb(206, 205, 205);
+  width: 20%;
+  padding: 2rem;
+  margin: 2rem auto;
+}
+
+.no-result-div div {
+  padding-top: 1rem;
+}
