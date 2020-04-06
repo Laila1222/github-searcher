@@ -1,3 +1,6 @@
+Created this website for Hack Your Future coding school React homework, in order to get some experience in working with react. 
+You can look for Github users in this page. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
