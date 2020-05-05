@@ -1,5 +1,15 @@
 /* UserProfile */
 
+nav div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.followers {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .custom-container {
   padding: 1rem;
 }
@@ -26,4 +36,47 @@
 
 .menuItem:hover {
   background-color: rgb(216, 213, 213);
+}
+
+@media (max-width: 768px) {
+  #main-container {
+    display: block!important;
+  }
+
+  .sidebar-card .card-body {
+  }
+
+
+  #sidebar {
+    width: 80%!important;
+    margin: 0 auto;
+  }
+
+  #mainside-container {
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, .125);
+    width: 80%!important;
+  }
+}
+
+@media (max-width: 467px) {
+  nav div {
+    display: block!important;
+  }
+
+  .menuItem {
+    display: block;
+    /* margin: .5rem auto; */
+  }
+
+  .followers {
+    display: block;
+  }
+
+  .followers-card {
+    width: 90%!important;
+    margin: 1rem auto!important;
+  }
+
+
 }

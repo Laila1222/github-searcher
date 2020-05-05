@@ -1,3 +1,12 @@
+In this app you can search for any Github user and check out some information about it. 
+
+App was built using React and Bootstrap. 
+
+Created by Lilla Kőrösi, 2019. 
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

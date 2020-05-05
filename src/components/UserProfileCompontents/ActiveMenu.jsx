@@ -67,7 +67,7 @@ class ActiveMenu extends React.Component {
         )}
         {this.props.activeMenuName === 'Followers' && (
           <React.Fragment>
-            <div className="w-100 d-flex flex-wrap  justify-content-around">
+            <div className="followers w-100  justify-content-around">
               {this.state.data.map(follower => (
                 <Followers
                   key={follower.id}

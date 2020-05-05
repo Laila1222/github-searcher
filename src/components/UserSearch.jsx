@@ -61,7 +61,7 @@ class UserSearch extends React.Component {
                     type="text"
                     name="userName"
                     ref={this.inputRef}
-                    placeholder="Search for a Github profile..."
+                    placeholder="Search for a profile..."
                     required
                   />
                 </div>
@@ -76,7 +76,7 @@ class UserSearch extends React.Component {
                       <span class="sr-only">Loading...</span>
                     </button>
                   ) : (
-                    <button className="btn btn-success" type="submit">
+                    <button className="btn btn-success mt-4" type="submit">
                       Search
                     </button>
                   )}
@@ -87,7 +87,7 @@ class UserSearch extends React.Component {
 
           <div className="container">
             {this.state.errorText && <ErrorText error={this.state.errorText} />}
-            <div id="users-container" className="row pt-3 flex-wrap ">
+            <div id="users-container" className="row flex-wrap ">
               {this.state.users.map(user => (
                 <UserItem
                   key={user.id}

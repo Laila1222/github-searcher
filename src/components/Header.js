@@ -19,7 +19,7 @@ class Header extends React.Component {
             <h2 id="logo" className="white-color pl-3 ">Github Searcher</h2>
           </Link>
           <Link to={'/'}>
-            <a href="/" className="pr-3">Back to a new search...</a>
+            <a href="/" className="pr-3 back-link">Back to a new search...</a>
           </Link>
           {/* <form onSubmit={this.handleFormSubmit} className="pr-3  mt-2">
           <div id="header-search" className="form-group">

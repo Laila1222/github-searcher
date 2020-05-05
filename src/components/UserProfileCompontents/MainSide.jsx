@@ -41,7 +41,7 @@ class MainSide extends React.Component {
     return (
       <div id="mainside-container" className="w-75  p-3">
         <nav className="">
-          <div className="d-flex justify-content-around ">
+          <div className="">
             <MenuItem name="Repositories" onClick={this.handleMenuClick} />
             <MenuItem name="Organizations" onClick={this.handleMenuClick} />
             <MenuItem name="Followers" onClick={this.handleMenuClick} />

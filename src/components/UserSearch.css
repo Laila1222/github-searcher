@@ -40,3 +40,13 @@
 .no-result-div div {
   padding-top: 1rem;
 }
+
+@media (max-width: 768px) { /* Tablet portrait */
+  #search-bar {
+    height: 90vh;
+  }
+
+  .to-center {
+    width: 80%;
+  }
+}

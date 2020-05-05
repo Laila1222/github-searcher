@@ -4,10 +4,10 @@ import './UserItem.css';
 
 class UserItem extends React.Component {
   render() {
-    const {avatar_url, login, id, score, type, url} = this.props;
+    const {avatar_url, login, id, score, type } = this.props;
     const path = `/user/${login}`;
     return (
-      <div className="card col-12 col-sm-6 col-md-4 col-lg-2 w-25 m-1 shadow p-3 bg-white rounder mx-auto ">
+      <div className="card col-12 col-sm-6 col-md-4 col-lg-2 w-25 shadow p-3 bg-white rounder">
         <Link to={path}>
           <img
             alt="avatar"
