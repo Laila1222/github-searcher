@@ -4,7 +4,7 @@ import './UserItem.css';
 
 class UserItem extends React.Component {
   render() {
-    const {avatar_url, login, id, score, type } = this.props;
+    const {avatar_url, login, id, score, type, theme } = this.props;
     const path = `/user/${login}`;
     return (
       <div className="card col-12 col-sm-6 col-md-4 col-lg-2 w-25 shadow p-3 bg-white rounder">
@@ -17,7 +17,7 @@ class UserItem extends React.Component {
           />
         </Link>
 
-        <div className="card-body">
+        <div className={theme === 'dark' ? 'dark-theme-card card-body': 'light-theme-card card-body'}>
           <Link to={path}>
             <h4 className="card-title">{login}</h4>
           </Link>

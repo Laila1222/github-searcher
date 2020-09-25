@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import * as API from '../api';
 import ErrorText from './ErrorText';
 import UserItem from './UserItem';
@@ -7,6 +7,7 @@ import './UserSearch.css';
 import Headline from './Headline';
 
 class UserSearch extends React.Component {
+
   state = {
     users: [],
     userName: '',
@@ -14,7 +15,6 @@ class UserSearch extends React.Component {
     errorText: '',
   };
 
-  inputRef = React.createRef();
 
   async getFetchData() {
     this.setState({isLoading: true});
@@ -33,11 +33,16 @@ class UserSearch extends React.Component {
     this.setState({errorText: ''});
     event.preventDefault();
 
-    this.setState(
-      {userName: this.inputRef.current.value, isLoading: true},
-      () => this.getFetchData()
-    );
+    this.setState({isLoading: true});
+    this.getFetchData();
+
+  
   };
+
+  handleChange = (e) => {
+    this.setState({userName: e.currentTarget.value});
+    console.log(this.state.userName);
+  }
 
   render() {
     return (
@@ -60,7 +65,7 @@ class UserSearch extends React.Component {
                     className="form-control"
                     type="text"
                     name="userName"
-                    ref={this.inputRef}
+                    onChange={this.handleChange}
                     placeholder="Search for a profile..."
                     required
                   />
@@ -73,7 +78,7 @@ class UserSearch extends React.Component {
                         role="status"
                         aria-hidden="true"
                       ></span>
-                      <span class="sr-only">Loading...</span>
+                      <span className="sr-only">Loading...</span>
                     </button>
                   ) : (
                     <button className="btn btn-success mt-4" type="submit">

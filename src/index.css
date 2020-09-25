@@ -20,3 +20,21 @@ code {
 .back-link {
   color: white;
 }
+
+.dark-theme {
+  color: white!important;
+  background-color: black!important;
+}
+
+.dark-theme-headline {
+  color: black;
+}
+
+.dark-theme-card {
+  background-color: grey;
+}
+
+.page-container {
+  background: hotpink;
+  min-height: 100vh;
+}
