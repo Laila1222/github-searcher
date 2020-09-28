@@ -1,7 +1,17 @@
-import React from 'react';
+import React from "react";
 
-export const currentTheme = 'dark';
+export const themes = {
+  light: "light",
+  dark: "dark",
+};
 
-const ColorContext = React.createContext(currentTheme);
+export const changeTheme = (currentColor) => {
+  console.log("from context", currentColor);
+};
 
-export default ColorContext;
+export const ColorContext = React.createContext({
+  theme: themes.dark,
+  changeTheme: () => {},
+});
+
+// export default ColorContext;

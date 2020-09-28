@@ -5,15 +5,28 @@ import UserProfile from "./components/UserProfileCompontents/UserProfile";
 import Header from "./components/Header";
 import Sidebar from "./components/UserProfileCompontents/Sidebar";
 import MainSide from "./components/UserProfileCompontents/MainSide";
-import ThemeContext, { themes } from "./context/ColorContext";
 import "./App.css";
-import ColorContext, {currentTheme} from "./context/ColorContext";
+import { ColorContext, themes } from "./context/ColorContext";
 import UserSearchFunctional from "./components/UserSearchFunctional";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.changeColor = () => {
+      this.setState((state) => ({
+        theme: state.theme === themes.dark ? themes.light : themes.dark
+      }));
+    };
+
+    this.state = {
+      theme: themes.dark,
+      changeColor: this.changeColor,
+    };
+  }
+
   render() {
     return (
-      <ColorContext.Provider value={currentTheme} >
+      <ColorContext.Provider value={this.state}>
         <Router>
           <Switch>
             <Route exact path="/">

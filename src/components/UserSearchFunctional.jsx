@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
-import ColorContext from "../context/ColorContext";
+import { ColorContext } from "../context/ColorContext";
 import Headline from "./Headline";
 
 import * as API from "../api";
@@ -8,15 +8,24 @@ import ErrorText from "./ErrorText";
 import UserItem from "./UserItem";
 import "../index.css";
 import "./UserSearch.css";
+import { currentTheme } from "./../context/ColorContext";
 
 function UserSearchFunctional(props) {
+  const colorContext = useContext(ColorContext);
+
   const [users, setUsers] = useState([]);
   const [userName, setUserName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorText, setErrorText] = useState("");
+  const stateInfo = useContext(ColorContext);
 
-  const currentColor = useContext(ColorContext);
-  console.log(currentColor);
+
+  console.log("context", colorContext);
+  console.log(colorContext.theme);
+
+  useEffect(() => {
+    console.log("effect", colorContext.theme);
+  }, [colorContext.theme]);
 
   const getFetchData = async () => {
     setIsLoading(true);
@@ -44,6 +53,11 @@ function UserSearchFunctional(props) {
     setUserName(e.currentTarget.value);
   };
 
+//   const handleThemeChange = (colorContext.theme) => {
+//     console.log("changing theme clicked", colorContext.theme);
+//     colorContext.changeTheme(colorContext.theme);
+//   };
+
   return (
     // <LangContext.Consumer value={this.state.value} >
     <ColorContext.Consumer>
@@ -55,21 +69,30 @@ function UserSearchFunctional(props) {
         </LangConsumer>
         </LangProvider>
       <Header /> */}
-          <div className={currentColor === "dark" ? "dark-theme page-container" : "light-theme page-container"}>
+          <div
+            className={
+              colorContext.theme === "dark"
+                ? "dark-theme page-container"
+                : "light-theme page-container"
+            }
+          >
             <header
-              className={currentColor === "dark" ? "dark-theme" : "light-theme"}
+              className={colorContext.theme === "dark" ? "dark-theme" : "light-theme"}
             >
-              The theme right now is {currentColor}
+              The theme right now is {colorContext.theme} Change to:{" "}
+              <span onClick={() => ColorContext.changeColor(colorContext.theme)}>
+                {colorContext.theme === "dark" ? "light" : "dark"}
+              </span>
             </header>
             <div id="search-bar">
               <div className="to-center">
-                <Headline theme={currentColor}/>
+                <Headline theme={colorContext.theme} />
 
                 <form onSubmit={handleFormSubmit} id="main-search-form">
                   <div className="form-group">
                     <input
                       className={
-                        currentColor === "dark"
+                        colorContext.theme === "dark"
                           ? "dark-theme form-control"
                           : "light-theme form-control"
                       }
@@ -106,7 +129,7 @@ function UserSearchFunctional(props) {
 
             <div
               className={
-                currentColor === "dark"
+                colorContext.theme === "dark"
                   ? "dark-theme container"
                   : "light-theme container"
               }
@@ -122,7 +145,7 @@ function UserSearchFunctional(props) {
                     score={user.score}
                     type={user.type}
                     id={user.id}
-                    theme={currentColor}
+                    theme={colorContext.theme}
                   />
                 ))}
               </div>
